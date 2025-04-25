@@ -15,13 +15,14 @@ r = ros2rate(node, 30);
 reset(r);
 
 while(1)
-    [data, ~, ~] = receive(pclSub, 5);
+    [data, status, ~] = receive(pclSub, 10);
     if ~isempty(data)
-        rawData = rosReadXYZ(data);
+        xyzData = rosReadXYZ(data, "PreserveStructureOnRead",true);
+        intensityData = rosReadField(data, "intensity", "PreserveStructureOnRead",true);
 
-        pclData = pointCloud(rawData);
+        % pclData = pointCloud(rawData);
 
-        [bboxes, scores, labels] = pillarPredict(pclData.Location);
+        [bboxes, scores, labels] = pillarPredict(xyzData, intensityData);
         [~,idx] = max(scores);
 
         bboxMsg.data = zeros(6, 1, 'single');
