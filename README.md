@@ -1,6 +1,6 @@
 # Deep Learning for 3D Object Detection
 
-This repository serves as a tutorial for training and deploying a 3D object detector using MATLAB® R2024b. It guides you through the processes of data processing, labeling, training, and deploying an object detection model. In this demonstration, simulated LiDAR data is collected from a vehicle navigating a parking lot.
+This repository serves as a tutorial for training and deploying a 3D object detector using MATLAB® R2024b-R2025a. It guides you through the processes of data processing, labeling, training, and deploying an object detection model. In this demonstration, simulated LiDAR data is collected from a vehicle navigating a parking lot.
 ![project overview](./images/scene-lidar-labels.png)
 
 ## Getting started
@@ -37,7 +37,6 @@ The [final section](<./4. Deploying 3D Object Detectors>) demonstrates how the t
 This project requires the following products:
 - [MATLAB®](https://www.mathworks.com/products/matlab.html)
 - [Lidar Toolbox™](https://www.mathworks.com/products/lidar.html)
-- [Image Processing Toolbox™](https://www.mathworks.com/products/image-processing.html)
 - [Computer Vision Toolbox™](https://www.mathworks.com/products/computer-vision.html)
 - [Deep Learning Toolbox™](https://www.mathworks.com/products/deep-learning.html)
 - [MATLAB® Coder™](https://www.mathworks.com/products/matlab-coder.html)
