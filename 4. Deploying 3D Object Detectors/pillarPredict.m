@@ -1,24 +1,15 @@
-function [bboxes, scores, labels] = pillarPredict(pcloud, intensities)
+function [bboxes, scores, labels] = pillarPredict(pcloud_3d, intensities)
 %#codegen
 
-persistent mynet
-
-if isempty(mynet)
-    mynet = coder.loadDeepLearningNetwork('detector.mat');
-end
-
-pointCloud_xyz = single(zeros([32 1083 3]));
-pointCloud_intensity = single(zeros([32 1083]));
-
-pointCloud_xyz(:, :, 1) = pcloud(:, :, 1);
-pointCloud_xyz(:, :, 2) = pcloud(:, :, 2);
-pointCloud_xyz(:, :, 3) = pcloud(:, :, 3);
-
-pointCloud_intensity(1:32, 1:1083) = intensities(1:32, 1:1083);
-
-pcloud_3d = pointCloud(pointCloud_xyz);
-pcloud_3d.Intensity = pointCloud_intensity;
-
-[bboxes,scores,labels] = detect(mynet,pcloud_3d,'Threshold',0.5);
+    persistent mynet
+    
+    if isempty(mynet)
+        mynet = coder.loadDeepLearningNetwork('detector.mat');
+    end
+    %Converting to pointCloud so the model can detect objects. pointCloud
+    %function can be used in code generation
+    pcloud = pointCloud(pcloud_3d, Intensity=intensities);
+    
+    [bboxes,scores,labels] = detect(mynet,pcloud,'Threshold',0.5);
 
 end
