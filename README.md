@@ -1,11 +1,19 @@
 # Deep Learning for 3D Object Detection
 
-This repository serves as a tutorial for training and deploying a 3D object detector using MATLAB® R2024b-R2025a. It guides you through the processes of data processing, labeling, training, and deploying an object detection model. In this demonstration, simulated LiDAR data is collected from a vehicle navigating a parking lot.
+This repository serves as a tutorial for training and deploying a 3D object detector using MATLAB® R2024b-R2025b. It guides you through the processes of data processing, labeling, training, and deploying an object detection model. In this demonstration, simulated LiDAR data is collected from a vehicle navigating a parking lot.
 ![project overview](./images/scene-lidar-labels.png)
+
+## Video Tutorials
+Learn how to use the code and apps described in this repository by following along with these videos:
+1. [Understanding and Processing Point Clouds](https://www.mathworks.com/videos/understanding-and-processing-point-clouds-1758624240285.html)
+2. [Labeling Point Clouds with the Lidar Labeler App](https://www.mathworks.com/videos/labeling-point-clouds-with-the-lidar-labeler-app-1758622603100.html)
+3. [Deep Learning with Point Clouds](https://www.mathworks.com/videos/deep-learning-with-point-clouds-1758620565245.html)
+4. [Deploying a 3D Object Detector](https://www.mathworks.com/videos/deploying-a-3d-object-detector-1758625294514.html)
 
 ## Getting started
 
 To get started, clone this repo to your local machine and open MATLAB or use this button to open the repository in MATLAB Online:
+
 [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=​​https://github.com/mathworks-robotics/deep-learning-for-3D-object-detection​)
 
 The repository follows the workflow shown below:
